@@ -20,7 +20,6 @@ ChartJS.register(
     Legend
 );
 
-
 const Chart = ({ data }) => {
     const [labels, setLabels] = useState([])
     const [values, setValues] = useState([])
@@ -35,17 +34,13 @@ const Chart = ({ data }) => {
             let dateString = dateObject.toLocaleDateString()
             valuesList.push(price)
             labelsList.push(dateString)
-
         }
         setValues(valuesList)
         setLabels(labelsList)
-        console.log("Chart useEffect")
     }, [])
-
 
     return (
         <div>
-
             <Line datasetIdKey='id'
                 data={{
                     labels: labels,

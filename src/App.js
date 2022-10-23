@@ -15,27 +15,7 @@ function App() {
   function handleLog() {
     console.log(apiData)
     console.log(apiData.prices)
-
   }
-
-
-
-  let myList = [['a', '1'], ['b', '2'], ['c', '3'], ['d', '4']]
-  let letters = []
-  let numbers = []
-  for (let pair of myList) {
-    letters.push(pair[0])
-    numbers.push(pair[1])
-  }
-  console.log(letters) // desired output: ['a', 'b', 'c', 'd']
-  console.log(numbers) // desired output: ['1', '2', '3', '4']
-
-
-
-
-
-
-
 
   return (
     <div className="App">
