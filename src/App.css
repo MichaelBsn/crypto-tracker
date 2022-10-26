@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App h1 {
+  text-align: center;
+}
+.App .chart {
+  max-width: 600px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/*# sourceMappingURL=App.css.map */

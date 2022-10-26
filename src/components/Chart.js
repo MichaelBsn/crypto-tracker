@@ -20,7 +20,7 @@ ChartJS.register(
     Legend
 );
 
-const Chart = ({ data }) => {
+const Chart = ({ data, currentChart, handleChartChange }) => {
     const [labels, setLabels] = useState([])
     const [values, setValues] = useState([])
 
@@ -37,25 +37,30 @@ const Chart = ({ data }) => {
         }
         setValues(valuesList)
         setLabels(labelsList)
-    }, [])
+    }, [data])
 
     return (
-        <div>
+        <div className='chart'>
             <Line datasetIdKey='id'
                 data={{
                     labels: labels,
                     datasets: [
                         {
                             id: 1,
-                            label: 'bitcoin',
+                            label: currentChart.toUpperCase(),
                             data: values,
                             backgroundColor: "red",
                             borderColor: "red",
-                            tension: 0.15
+                            tension: 0.05
                         }
                     ],
                 }}
                 options={{ responsive: true, }} />
+            <div className='coin-select-container'>
+                <label><input type="radio" name="coin" value={'bitcoin'} onClick={handleChartChange} /> Bitcoin</label>
+                <label><input type="radio" name="coin" value={'ethereum'} onClick={handleChartChange} /> Ethereum</label>
+                <label><input type="radio" name="coin" value={'tether'} onClick={handleChartChange} /> Tether</label>
+            </div>
         </div>
     )
 }
