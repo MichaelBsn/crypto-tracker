@@ -12,6 +12,7 @@ function App() {
 
   function getCurrentChart() {
     const apiUrl = "https://api.coingecko.com/api/v3/coins/" + currentChart + "/market_chart?vs_currency=usd&days=14&interval=daily"
+    console.log(apiUrl)
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setApiData(data));
@@ -21,8 +22,6 @@ function App() {
     setCurrentChart(e.target.value)
   }
 
-  // let currentTime = Date.now()
-  // let lastYear = currentTime - 31556926000
 
   return (
     <div className="App">
